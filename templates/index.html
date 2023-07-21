@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airline Feedback Form</title>
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("static/bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+h2{
+  color: white;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form select,
+form input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+}
+
+form input[type="number"] {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: #0072CE;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  
+}
+
+input[type="submit"]:hover {
+  background-color: #005AA3;
+}
+::placeholder {
+            text-align: left;
+        }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Invistico Airline Feedback Form</h1>
+      <form action="/predict" method="post">
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="" disabled selected>--Select gender--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="99" placeholder="Please enter numbers only">
+
+      <label for="Type of Travel">Type of Travel:</label>
+      <select id="Type of Travel" name="type_of_travel">
+        <option value="" disabled selected>--Select type of travel--</option>
+        <option value="Personal Travel">Personal Travel</option>
+        <option value="Business Travel">Business Travel</option>
+      </select>
+      
+      <label for="class">Class:</label>
+      <select id="class" name="class">
+        <option value="" disabled selected>--Select class--</option>
+        <option value="Eco">Eco</option>
+        <option value="Business">Business</option>
+        <option value="Eco Plus">Eco Plus</option>
+      </select>
+      
+      <label for="flightDistance">Flight Distance:</label>
+    <input type="number" id="flightDistance" name="flightDistance" min="0" placeholder="Please enter numbers only" required>
+
+    <label for="departureDelay">Departure Delay:</label>
+    <input type="number" id="departureDelay" name="departureDelay" min="0" placeholder="Please enter numbers only" required>
+
+    <label for="arrivalDelay">Arrival Delay:</label>
+    <input type="number" id="arrivalDelay" name="arrivalDelay" min="0" placeholder="Please enter numbers only" required>
+
+    <label for="seatComfort">Seat Comfort:</label>
+    <input type="number" id="seatComfort" name="seatComfort" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="depArrConv">Departure/Arrival Time Convenient:</label>
+    <input type="number" id="depArrConv" name="depArrConv" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="foodDrink">Food and Drink:</label>
+    <input type="number" id="foodDrink" name="foodDrink" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="gateLocation">Gate Location:</label>
+    <input type="number" id="gateLocation" name="gateLocation" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="inFlightWifi">In-flight Entertainment:</label>
+    <input type="number" id="inFlightWifi" name="inFlightWifi" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="inFlightEntertainment">In-flight Entertainment:</label>
+    <input type="number" id="inFlightEntertainment" name="inFlightEntertainment" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="onlineSupport">Online Support:</label>
+    <input type="number" id="onlineSupport" name="onlineSupport" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="easeOfBooking">Ease of Online Booking:</label>
+    <input type="number" id="easeOfBooking" name="easeOfBooking" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="onBoardService">On-board Service:</label>
+    <input type="number" id="onBoardService" name="onBoardService" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="legroomService">Leg Room Service:</label>
+    <input type="number" id="legroomService" name="legroomService" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="baggageHandling">Baggage Handling:</label>
+    <input type="number" id="baggageHandling" name="baggageHandling" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="checkinService">Checkin Service:</label>
+    <input type="number" id="checkinService" name="checkinService" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="cleanliness">Cleanliness:</label>
+    <input type="number" id="cleanliness" name="cleanliness" min="1" max="5" placeholder="Enter in range 1-5" required>
+
+    <label for="onlineBoarding">Online Boarding:</label>
+    <input type="number" id="onlineBoarding" name="onlineBoarding" min="1" max="5" placeholder="Enter in range 1-5" required>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <h2>{{predicted_value}}</h2>
+</body>
+</html>
